@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="fondo">
 <div class="create-usuario cont-user">
-        <form class="form-create form-user" action="http://localhost/Antioquia-CDMC/apisenasoft/controlador/usuario.php" method="post">
+        <form class="ult-ch form-create form-user" action="http://localhost/Antioquia-CDMC/apisenasoft/controlador/usuario.php" method="post">
             <p>Registrar</p>
             <div class="reg1">
             <br><input type="text" name="texto11" class="inp-reg nombre" id="ipt-nom" placeholder="Ingrese los nombres" required><br>
