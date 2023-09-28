@@ -26,12 +26,18 @@
                 </header>
                 <!-- Lista del menu -->
                 <ul class="cont_lista">
+                    <a href="opcionesUsu/Agendar.php">
                     <li class="cajas">
                         <span>Agendamiento </span>
                     </li>
+                    </a>
+
+                    <a href="opcionesUsu/editarCuenta.php">
                     <li class="cajas">
                         <span>Editar Cuenta</span>
                     </li>
+                    </a>
+                   
                     <a href="login.php">
                     <li class="cajas">
                         <span>Eliminar Cuenta</span>
