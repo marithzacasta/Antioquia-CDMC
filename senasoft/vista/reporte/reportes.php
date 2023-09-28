@@ -100,6 +100,6 @@ $dompdf->loadHtml($html);
 $dompdf->setPaper('letter');
 
 $dompdf->render();
-$dompdf->stream("archivo_.pdf", array("Attachment" => false));//true para que descargue // false solo muestra el pdf
+$dompdf->stream("archivo_.pdf", array("Attachment" => true));//true para que descargue // false solo muestra el pdf
 ?>
 
