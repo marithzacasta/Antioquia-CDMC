@@ -11,7 +11,7 @@ class agendar extends conexion
     private $idUsuario = 0;
     private $idManzana = 0;
     private $idServicio = 0;
-    private $idEstablecimeinto = 0;
+    private $idEstablecimiento = 0;
     private $fecha = "";
     private $hora = "";
     //912bc00f049ac8464472020c5cd06759
@@ -25,7 +25,7 @@ class agendar extends conexion
             $inicio = ($cantidad * ($pagina - 1)) +1 ;
             $cantidad = $cantidad * $pagina;
         }
-        $query = "SELECT idAgendamiento, idUsuario, idManzana, idServicio, idEstablecimeinto, fecha, hora FROM " . $this->table . " limit $inicio,$cantidad";
+        $query = "SELECT  idAgendamiento, idManzana, idServicio, idEstablecimeinto, fecha, hora FROM " . $this->table . " limit $inicio,$cantidad";
         $datos = parent::obtenerDatos($query);
         return ($datos);
     }

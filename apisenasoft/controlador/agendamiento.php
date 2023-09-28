@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
         $idAgendamiento = $_GET['id'];
         $datosAgendar= $_agendar->obtenerAgendamientos($idAgendamiento);
         header("Content-Type: application/json");
-        echo json_encode($datosProducto);
+        echo json_encode($datosAgendar);
         http_response_code(200);
     }
     }
