@@ -50,29 +50,24 @@ include("../../../apisenasoft/modelo/conexion/conexion.php");
   </thead>
   <tbody>
 
-  <?php
-      // foreach($datos as $ver):
-  ?>
-    <!-- <tr> -->
-      <!-- <th scope="row">1</th> -->
-      <!-- <td><?php  echo $ver["idManzana"] ;?></td> -->
-      <!-- <td><?php  echo $ver["idServicio"] ;?></td> -->
-      <!-- <td><?php  echo $ver["idEstablecimiento"] ;?></td> -->
-      <!-- <td><?php  echo $ver["fecha"] ;?></td> -->
-      <!-- <td><?php  echo $ver["hora"] ;?></td> -->
-    </tr>
-
-<?php
-  //endforeach;
-?>
 
     <tr>
-      <th scope="row">2</th>
-      <td>Colores</td>
+      <th scope="row">1</th>
+      <td>Manzana1</td>
       <td>niñera</td>
       <td>barrio antioquia</td>
       <td>28-09-2023</td>
       <td>5:20 am</td>
+    </tr>
+
+    
+    <tr>
+      <th scope="row">2</th>
+      <td>Manzana2</td>
+      <td>Lavar Ropa</td>
+      <td>Sta Maria</td>
+      <td>10-07-2023</td>
+      <td>3:40 am</td>
     </tr>
     
 
