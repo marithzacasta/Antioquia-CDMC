@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+/* Contiene la barra del menu lateral y demas */
+.fondo{ 
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(26, 146, 194);
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr ;
+}
+/* contiene mapa y buscador */
+.divisiones{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr ;
+}
+/* MENU */
+.menu{
+    background-color: rgb(255, 71, 71);
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.nombres{
+    display: flex;
+    flex-direction:column;
+    padding: 15px;
+    margin-bottom: 8px;
+    color: white;
+}
+.nombres h1{
+    color: rgb(247, 246, 246);
+    font-weight: bold  
+}
+.cont_lista{
+    padding: 4px;
+}
+.cajas{
+    text-align: center;
+    padding: 20px;
+    margin: 8px;
+    border-bottom: 2px solid rgba(253, 248, 248, 0.37);
+}
+span{
+    font-size: 22px;
+    color: rgba(248, 245, 245, 0.932);
+    
+}
+.cajas:hover{
+    background-color: rgba(177, 165, 165, 0.575);
+    transform: scale(1.1);
+}
+a{
+    text-decoration: none;
+}
+
+/* BUSCADOR */
+.cont_buscador{
+    background-color: white;
+    padding: 8px;
+    display: flex;
+    left: 100px;
+    justify-content: right;
+    align-items: center;
+}
+.cont_buscador input{
+    background-color: rgb(0, 0, 0, 0);
+    outline: none;
+    border: none;
+    width: 400px;
+    height:  40px;
+    border-radius: 20px;
+    color: white;
+    padding-left: 15px;
+    border: 2px solid #F54C33;
+    color: black;
+}
+/* LUPA */
+.cont_buscador i{
+    position: absolute;
+    right: 30px;
+    top: 28px;
+    font-size: 30px;
+    color:  #F54C33;
+}
+::placeholder{
+    color: #F54C33;
+}
+.cont_buscador i:hover{
+    font-size: 35px;
+}
+/* MAPA */
+iframe{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+

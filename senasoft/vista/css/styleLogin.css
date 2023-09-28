@@ -1,0 +1,250 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Estilo de contenedores */
+
+.content{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/pexels-nate-hovee-5063805.jpg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.blur-content{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.pizarra{
+    width: 80%;
+    height: 540px;
+    color: aliceblue;
+    border-radius: 50px;
+    background-color:rgba(234, 36, 1, 0.95);
+    display: flex;
+}
+
+.info{
+    width: calc(45% - 40px);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login{
+    width: calc(45% - 40px);
+    height: 500px;
+    border-radius: 50px;
+    background-color: rgba(245, 76, 50);
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.registro{
+    padding: 20px;
+    width: calc(45% - 40px);
+    height: 500px;
+    border-radius: 50px;
+    background-color: rgba(245, 76, 50);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.login-reg{
+    width: 40%;
+    height: 500px;
+}
+
+.form-login{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-registro{
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo información general */
+
+.titulo{
+    font-family: 'Mooli', sans-serif;
+    font-size: 40px;
+}
+
+.titulo-min{
+    font-family: 'Mooli', sans-serif;
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: -8px;
+}
+
+.info>p{
+    width: 400px;
+    text-align: center;
+}
+
+/* Estilo formularios */
+
+.inputs{
+    width: calc(100% - 20px);
+    height: 35px;
+    padding-left: 20px;
+    background-color: rgb(0,0,0,0);
+    border: none;
+    color: #F4E5E4;
+    border-bottom: 2px solid rgba(244, 229, 228, 0.85);
+    transition: all 0.5s ease;
+}
+
+.inputs:focus{
+    outline: none;
+    border: 2px solid #F54C33;
+    border-radius: 20px;
+}
+
+::placeholder{
+    color: rgba(244, 229, 228, 0.6);
+}
+
+h1{
+    font-size: 35px;
+}
+
+.btn-login,
+.btn-signup,
+.btn-password{
+    color: #F4E5E4;
+    transition: all 0.5s ease;
+}
+
+.btn-login,
+.btn-signup{
+    background-color: rgb(0,0,0,0);
+    border: none;
+    color: #F4E5E4;
+    text-decoration: underline;
+}
+
+.btn-password{
+    font-size: 13px;
+    margin-left: 53%;
+    margin-top: 5px;
+}
+
+.btn-password:hover{
+    transform: scale(1.08);
+}
+
+.btn-ing{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 20px;
+    color: #F4E5E4;
+    background-color: rgb(0,0,0,0);
+    border-radius: 15px;
+    border: 1.5px solid #F4E5E4;
+    transition: all 0.5s ease;
+}
+
+.btn-ing:hover{
+    background-color: #F4E5E4;
+    color: #EA2301;
+    transform: scale(1.08);
+}
+
+.account-login,
+.account-signup{
+    color: rgba(244, 229, 228, 0.7);
+    font-size: 13px;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.account-signup{
+    margin-left: 7%;
+}
+
+.account-signup:hover{
+    transform: scale(1.1);
+}
+
+.account-login:hover{
+    transform: scale(1.1);
+}
+
+select{
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: rgb(0,0,0,0);
+    color: rgb(244, 229, 228, 0.6);
+    border-bottom: 2px solid #F4E5E4;
+}
+
+.btn-reg{
+    margin-top: 0px;
+    width: 100%;
+    height: 35px;
+    border-radius: 15px;
+    border: 1.5px solid #F4E5E4;
+    background-color: rgb(0,0,0,0);
+    color: #F4E5E4;
+    transition: all 0.5s ease;
+}
+
+.btn-reg:hover{
+    background-color: #F4E5E4;
+    color: #EA2301;
+    transform: scale(1.08);
+}
+
+.form-registro>h1{
+    margin-top: -20%;
+}
+
+option{
+    background-color: #EA2301;
+    outline: none;
+}
+
+/* Orden de inputs en registro */
+
+.reg1{
+    width: 43%;
+    height: 300px;
+    margin-left: -50%;
+}
+
+.reg2{
+    width: 43%;
+    height: 300px;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: -10%;
+}
