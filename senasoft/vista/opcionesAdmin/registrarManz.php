@@ -59,9 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Registrar</h1>
             <select class="nombre" name="texto1" id="s1">
             <?php
-            foreach($datos2 as $ver2):
+            foreach($datos as $ver):
             ?>
-            <option value="<?php echo $ver2["idMunicipio"]; ?>"><?php  echo $ver["nombreMunicipio"]; ?></option>
+            <option value="<?php echo $ver["idMunicipio"]; ?>"><?php  echo $ver["nombreMunicipio"]; ?></option>
             <?php
             endforeach;
             ?>

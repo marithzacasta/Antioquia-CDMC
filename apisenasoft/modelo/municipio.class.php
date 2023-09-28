@@ -56,11 +56,13 @@ class municipio extends conexion
                      $resp = $this->insertarMunicipio();
                      
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idMunicipio" => $resp
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idMunicipio" => $resp
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }

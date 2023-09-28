@@ -7,7 +7,7 @@ class servicio extends conexion
 {
 
     private $table = "servicio";
-    private $idservicio = 0;
+    private $idServicio = 0;
     private $idCategoria = 0;
     private $nombreServicio = "";
     private $descripcion = "";
@@ -58,11 +58,13 @@ class servicio extends conexion
 
                      
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idServicio" => $resp
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idServicio" => $resp
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }
@@ -121,10 +123,12 @@ public function put($json){
     
                 $resp = $this->modificarServicio();
                 if($resp){
-                    $respuesta = $_respuestas->response;
-                    $respuesta["result"] = array(
-                        "idServicio" => $this->idServicio);
-                    return $respuesta;
+                    header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                    exit();
+                    // $respuesta = $_respuestas->response;
+                    // $respuesta["result"] = array(
+                    //     "idServicio" => $this->idServicio);
+                    // return $respuesta;
                 }else{
                     return $_respuestas->error_500();
                 }

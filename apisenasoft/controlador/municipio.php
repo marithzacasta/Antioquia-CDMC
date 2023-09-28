@@ -5,12 +5,6 @@ require_once '../modelo/municipio.class.php';
 $_respuestas = new respuestas;
 $_municipio = new municipio;
 
-if($_SERVER['REQUEST_METHOD'] == "PUT"){
-    //recibimos los datos enviados
-    
-
-}
-
 //metodo get buscar todo o por codigo
 if($_SERVER['REQUEST_METHOD'] == "GET"){
 
@@ -18,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
         $pagina = $_GET["page"];
         $listaMunicipio = $_municipio->listaMunicipio($pagina);
         header("Content-Type: application/json");
-        echo json_encode($listaAgendamiento);
+        echo json_encode($listaMunicipio);
         http_response_code(200);
     }
 
@@ -102,10 +96,10 @@ if($_SERVER['REQUEST_METHOD'] == "PUT"){
 if($_SERVER['REQUEST_METHOD'] == "DELETE"){
 
         $headers = getallheaders();
-        if(isset($headers["token"]) && isset($headers["idAgendamiento"])){
+        if(isset($headers["idAgendamiento"])){
             //recibimos los datos enviados por el header
             $send = [
-                "token" => $headers["token"],
+                // "token" => $headers["token"],
                 "idAgendamiento" =>$headers["idAgendamiento"]
             ];
             $postBody = json_encode($send);
