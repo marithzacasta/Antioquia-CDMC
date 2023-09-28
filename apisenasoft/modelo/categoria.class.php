@@ -44,22 +44,24 @@ class categoria extends conexion
           //  $arrayToken =   $this->buscarToken();
             //if($arrayToken){
 
-                if(!isset($datos['nombreCategoria']) || !isset($datos["descripcion"])  ){
+                if(!isset($datos['texto1']) || !isset($datos["texto2"])  ){
                     return $_respuestas->error_400();
                 }else{
-                    $this->nombreCategoria = $datos['nombreCategoria']; 
-                    $this->descripcion = $datos['descripcion']; 
+                    $this->nombreCategoria = $datos['texto1']; 
+                    $this->descripcion = $datos['texto2']; 
                   
 
-                     $resp = $this->insertarMunicipio();
+                     $resp = $this->insertarCategoria();
 
                      
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idCategoria" => $resp
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idCategoria" => $resp
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }
@@ -76,7 +78,7 @@ class categoria extends conexion
     }
 
 
-    private function insertaCategoria(){
+    private function insertarCategoria(){
         $query = "INSERT INTO " . $this->table . " (idCategoria, nombreCategoria, descripcion)
         values
         ('" . $this->idCategoria . "','" . $this->nombreCategoria . "','" . $this->descripcion . "')"; 

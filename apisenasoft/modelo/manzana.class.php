@@ -7,6 +7,7 @@ class manzana extends conexion {
 
     private $table = "manzana";
     private $idManzana = 0;
+    private $idMunicipio = 0;
     private $nombreManzana = "";
     private $localidad = "";
     private $dirrecion = "";
@@ -31,6 +32,12 @@ class manzana extends conexion {
 
     }
 
+    public function obtenerManzanaNombre($id){
+        $query = "SELECT * FROM " . $this->table . " WHERE nombreManzana = '$id'";
+        return parent::obtenerDatos($query);
+
+    }
+
     public function post($json){
         $_respuestas = new respuestas;
         $datos = json_decode($json,true);
@@ -42,23 +49,26 @@ class manzana extends conexion {
           //  $arrayToken =   $this->buscarToken();
             //if($arrayToken){
 
-                if(!isset($datos['texto1']) || !isset($datos['texto2']) || !isset($datos['texto3']) ){
+                if(!isset($datos['texto1']) || !isset($datos['texto2']) || !isset($datos['texto3'])  || !isset($datos['texto4']) ){
                     return $_respuestas->error_400();
                 }else{
                 
-                    $this->nombreManzana = $datos['texto1']; 
-                    $this->localidad = $datos['texto2'];
-                    $this->direccion = $datos['texto3']; 
+                    $this->idMunicipio = $datos['texto1']; 
+                    $this->nombreManzana = $datos['texto2'];
+                    $this->localidad = $datos['texto3']; 
+                    $this->direccion = $datos['texto4']; 
                    
                      $resp = $this->insertarManzana();
 
                      
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idManzana" => $resp
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idManzana" => $resp
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }
@@ -76,10 +86,10 @@ class manzana extends conexion {
 
 
     private function insertarManzana(){
-        $query = "INSERT INTO " . $this->table . " (idManzana, nombreManzana, localidad, direccion, estado )
+        $query = "INSERT INTO " . $this->table . " (idManzana,idMunicipio, nombreManzana, localidad, direccion, estado )
         values
-        ('" . $this->idManzana . "','" . $this->nombreManzana . "','" . $this->localidad . "' ,'" . $this->dreccion . "', ,'" . $this->estado . "')"; 
-        $resp = parent::nonQueryId($query);
+        ('" . $this->idManzana . "','" . $this->idMunicipio . "','" . $this->nombreManzana . "','" . $this->localidad . "' ,'" . $this->direccion . "','" . $this->estado . "')"; 
+        $resp = parent::nonQuery($query);
         if($resp){
              return $resp;
         }else{
@@ -118,11 +128,13 @@ class manzana extends conexion {
         
                     $resp = $this->modificarManzana();
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idManzana" => $this->idManzana
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idManzana" => $this->idManzana
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }

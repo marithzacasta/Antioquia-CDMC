@@ -44,7 +44,7 @@ $datos2 = json_decode($response2, true);
             <?php
             foreach($datos2 as $ver2):
             ?>
-            <option value="<?php echo $ver2["idMunicipio"]; ?>"><?php  echo $ver["nombreMunicipio"]; ?></option>
+            <option name="texto2" value="<?php echo $ver2["idMunicipio"]; ?>"><?php  echo $ver2["nombreMunicipio"]; ?></option>
             <?php
             endforeach;
             ?>
@@ -52,7 +52,7 @@ $datos2 = json_decode($response2, true);
             <?php
             foreach($datos as $ver):
             ?>
-            <input class="nombre" type="text" name="texto2" value="<?php echo $ver["nombreManzana"]; ?>" placeholder="Ingrese el nombre de la Manzana"><br>
+            <input class="nombre" type="text" name="texto1" value="<?php echo $ver["nombreManzana"]; ?>" placeholder="Ingrese el nombre de la Manzana"><br>
             <input class="nombre" type="text" name="texto3" value="<?php echo $ver["localidad"]; ?>" placeholder="Ingrese la localidad de la Manzana"><br>
             <input class="nombre" type="text" name="texto4" value="<?php echo $ver["direccion"]; ?>" placeholder="Ingrese la dirección de la Manzana"><br>
             <br><input type="submit" value="Editar" id="btn-edit2-manz" class="btn-edit">

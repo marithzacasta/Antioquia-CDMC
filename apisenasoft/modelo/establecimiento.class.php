@@ -54,11 +54,13 @@ class establecimiento extends conexion
                      $resp = $this->insertarEstablecimiento();
                      
                     if($resp){
-                        $respuesta = $_respuestas->response;
-                        $respuesta["result"] = array(
-                            "idEstablecimiento" => $resp
-                        );
-                        return $respuesta;
+                        header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                        // $respuesta = $_respuestas->response;
+                        // $respuesta["result"] = array(
+                        //     "idEstablecimiento" => $resp
+                        // );
+                        // return $respuesta;
                     }else{
                         return $_respuestas->error_500();
                     }
@@ -116,10 +118,12 @@ public function put($json){
     
                 $resp = $this->modificarEstablecimiento();
                 if($resp){
-                    $respuesta = $_respuestas->response;
-                    $respuesta["result"] = array(
-                        "idEstablecimiento" => $this->idEstablecimiento);
-                    return $respuesta;
+                    header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
+                        exit();
+                    // $respuesta = $_respuestas->response;
+                    // $respuesta["result"] = array(
+                    //     "idEstablecimiento" => $this->idEstablecimiento);
+                    // return $respuesta;
                 }else{
                     return $_respuestas->error_500();
                 }
