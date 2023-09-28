@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="barra">
-        <a class="report" href="">Generar Reporte</a>
+        <a class="report" href="reporte/reportes.php">Generar Reporte</a>
     </div>
     <section class="content">
         <div class="opciones">

@@ -1,6 +1,7 @@
 <?php
-include("../../../apisenasoft/modelo/conexion/conexion.php");
+ob_start();// esto es para indicar que todo lo que este aqui adentro lo va guardar la variable html, va el formato de html
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,16 @@ include("../../../apisenasoft/modelo/conexion/conexion.php");
     
 </head>
 <body>
-<table class="table">
+
+
+<?php
+include("../../../apisenasoft/modelo/conexion/conexion.php");
+?>
+
+
+  <div class="cont_tabla">
+   
+  <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -41,10 +51,31 @@ include("../../../apisenasoft/modelo/conexion/conexion.php");
   </tbody>
 </table>
 
-
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     
 </body>
 </html>
+
+<?php
+$html=ob_get_clean();
+// echo $html;
+
+require_once '../../../libreria/dompdf/autoload.inc.php';
+use Dompdf\Dompdf;
+$dompdf = new Dompdf();
+//aqui hay un objeto y lo que voy hacer esque voy a guaradar todas las interraciones que tiene donpdf
+
+$options = $dompdf->getOptions();
+$options->set(array('isRemoteEnabled' => true));
+$dompdf->setOptions($options);
+
+$dompdf->loadHtml("holaa ya medio");
+$dompdf->setPaper('letter');
+
+$dompdf->render();
+$dompdf->stream("archivo_.pdf", array("Attachment" => false));//true para que descargue
+?>
+
