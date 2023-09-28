@@ -7,6 +7,7 @@ class manzana extends conexion {
 
     private $table = "manzana";
     private $idManzana = 0;
+    private $idMunicipio = 0;
     private $nombreManzana = "";
     private $localidad = "";
     private $dirrecion = "";

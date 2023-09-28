@@ -1,12 +1,23 @@
 <?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://localhost/Antioquia-CDMC/apisenasoft/controlador/municipio.php?page=1');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+
+if(curl_errno($ch)){
+ echo curl_error($ch);
+}else{
+$datos = json_decode($response, true);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $municipio = $_POST["texto1"];
+    $idMunicipio = $_POST["texto1"];
     $nombreManzana = $_POST["texto2"];
     $localidad = $_POST["texto3"];
     $direccion = $_POST["texto4"];
 
     $api_url = 'http://localhost/Antioquia-CDMC/apisenasoft/controlador/manzana.php';
-    $data = array('texto1' => $municipio, 'texto2' => $nombreManzana,'texto3' => $localidad, 'texto4' => $direccion);
+    $data = array('texto1' => $idMunicipio, 'texto2' => $nombreManzana,'texto3' => $localidad, 'texto4' => $direccion);
 
     $ch = curl_init($api_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -46,7 +57,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="create-manz cont-manz">
         <form class="form-create" action="http://localhost/Antioquia-CDMC/apisenasoft/controlador/manzana.php" method="post">
             <h1>Registrar</h1>
-            <input class="nombre" type="text" name="texto1" placeholder="Ingrese el municipio de la Manzana"><br>
+            <select class="nombre" name="texto1" id="s1">
+            <?php
+            foreach($datos2 as $ver2):
+            ?>
+            <option value="<?php echo $ver2["idMunicipio"]; ?>"><?php  echo $ver["nombreMunicipio"]; ?></option>
+            <?php
+            endforeach;
+            ?>
             <input class="nombre" type="text" name="texto2" placeholder="Ingrese el nombre de la Manzana"><br>
             <input class="nombre" type="text" name="texto3" placeholder="Ingrese la localidad de la Manzana"><br>
             <input class="nombre" type="text" name="texto4" placeholder="Ingrese la dirección de la Manzana"><br>
