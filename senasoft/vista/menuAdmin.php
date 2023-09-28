@@ -52,7 +52,7 @@
         <div class="opciones">
             <div class="icon"><img src="img/usuario.png" alt=""></div>
             <form id="f1" class="form-create" name="f1" action="opcionesAdmin/editarUsuario.php" method="GET">
-            <p>Municipios</p>
+            <p>Usuarios</p>
             <input type="text" id="texto1" name="texto1" class="nombre" placeholder="Ingrese el nombre del usuario">    
             <div class="botones"><br>
             <br><a id="btn-create-mun" class="create" href="opcionesAdmin/registrarUsuario.php">Registrar</a>

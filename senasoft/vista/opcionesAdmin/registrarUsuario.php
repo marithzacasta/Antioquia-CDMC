@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="fondo">
 <div class="create-usuario cont-user">
-        <form class="ult-ch form-create form-user" action="http://localhost/Antioquia-CDMC/apisenasoft/controlador/usuario.php" method="post">
+        <form class="ult-ch form-create" action="http://localhost/Antioquia-CDMC/apisenasoft/controlador/usuario.php" method="post">
             <p>Registrar</p>
             <div class="reg1">
             <br><input type="text" name="texto11" class="inp-reg nombre" id="ipt-nom" placeholder="Ingrese los nombres" required><br>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br><input type="password" name="texto10" class="inp-reg nombre" id="ipt-contra" placeholder="Ingrese la contrasena" required><br>
             <br><input type="text" name="texto13" class="inp-reg nombre" id="ipt-contra" placeholder="Ingrese el rol" required><br>
             </div>
-            <br><input class="btn-create" type="submit"  value="Registrar" id="btn-edit2-usuario">
+            <br><input class="ajust btn-create" type="submit"  value="Registrar" id="btn-edit2-usuario">
         </form>
     </div>
 </body>
