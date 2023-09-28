@@ -113,7 +113,7 @@ public function put($json){
     
                 $resp = $this->modificarMunicipio();
                 if($resp){
-                    header('Location: http://localhost/senasoft1-main/senasoft/vista/menuAdmin.php');
+                    header('Location: http://localhost/Antioquia-CDMC/senasoft/vista/menuAdmin.php');
                     exit();
                     // $respuesta = $_respuestas->response;
                     // $respuesta["result"] = array(
